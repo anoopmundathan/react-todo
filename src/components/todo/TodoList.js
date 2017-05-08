@@ -1,17 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import TodoItem from './TodoItem';
+
 const TodoList = props => {
     return(
         <div className="todo-list">
             <ul>
-                {props.todos.map(todo => 
-                    <li key={todo.name}>
-                        <input 
-                            type="checkbox" 
-                            defaultChecked={todo.isComplete}/>
-                        { todo.name }
-                    </li>)}
+                {props.todos.map(todo => <TodoItem {...todo} key={todo.id}/>)}
             </ul>
         </div>
     );
