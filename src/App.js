@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import TodoForm from './components/todo/TodoForm';
+import TodoList from './components/todo/TodoList';
 
 class App extends Component {
 
@@ -35,15 +36,7 @@ class App extends Component {
         <TodoForm 
           onChangeInput={ this.onChangeInput.bind(this)} 
           currentTodo={ this.state.currentTodo }/>
-        <div className="todo-list">
-          <ul>
-            {this.state.todos.map(todo => 
-              <li key={todo.name}>
-                <input type="checkbox" defaultChecked={todo.isComplete}/>{ todo.name }
-              </li>)}
-          </ul>
-        </div>
-
+        <TodoList todos={ this.state.todos}/>
       </div>
     );
   }
