@@ -8,29 +8,24 @@ import TodoList from './components/todo/TodoList';
 
 class App extends Component {
 
-  constructor() {
-    super();
-    this.state = {
+  state = {
       todos: [
         { id: 1, name: 'Learn React', isComplete: false},
         { id: 2, name: 'Learn Vue', isComplete: true},
         { id: 3, name: 'Learn Redux', isComplete: false}
       ],
-      currentTodo: ''
-    }
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleEmptySubmit = this.handleEmptySubmit.bind(this);
+      currentTodo: '',
+      errorMessage: ''
   }
 
-  onChangeInput(evt) {
+  onChangeInput = evt => {
     this.setState({
       currentTodo: evt.target.value,
       errorMessage: ''
     })
   }
 
-  handleSubmit(evt) {
+  handleSubmit = evt => {
     evt.preventDefault();
 
     const newId = generateId();
@@ -48,7 +43,7 @@ class App extends Component {
     });
   }
 
-  handleEmptySubmit(evt) {
+  handleEmptySubmit = evt => {
     evt.preventDefault();
     this.setState({
       errorMessage: 'Please enter a todo'
@@ -65,10 +60,10 @@ class App extends Component {
         </div>
         {this.state.errorMessage}
         <TodoForm 
-          onChangeInput={ this.onChangeInput.bind(this)} 
-          currentTodo={ this.state.currentTodo }
-          handleSubmit={ submitHandler } />
-        <TodoList todos={ this.state.todos}/>
+          onChangeInput={this.onChangeInput} 
+          currentTodo={this.state.currentTodo }
+          handleSubmit={submitHandler } />
+        <TodoList todos={this.state.todos}/>
       </div>
     );
   }
