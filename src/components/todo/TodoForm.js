@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const TodoForm = props => {
     return (
         <div className="todo-app">
-            <form>
+            <form onSubmit={props.handleSubmit}>
                 <input 
                     type="text" 
                     onChange={props.onChangeInput} 
@@ -16,7 +16,8 @@ const TodoForm = props => {
 
 TodoForm.PropTypes = {
     onChange: PropTypes.func.isRequired,
-    currentTodo: PropTypes.string.isRequired
+    currentTodo: PropTypes.string.isRequired,
+    handleSubmit: PropTypes.func.isRequired
 }
 
 export default TodoForm;
