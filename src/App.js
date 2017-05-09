@@ -18,11 +18,15 @@ class App extends Component {
       ],
       currentTodo: ''
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEmptySubmit = this.handleEmptySubmit.bind(this);
   }
 
   onChangeInput(evt) {
     this.setState({
-      currentTodo: evt.target.value
+      currentTodo: evt.target.value,
+      errorMessage: ''
     })
   }
 
@@ -37,24 +41,33 @@ class App extends Component {
     }
 
     const updatedTodo = addTodo(this.state.todos, newTodo);
-    
+
     this.setState({
       todos: updatedTodo,
       currentTodo: ''
     });
   }
 
+  handleEmptySubmit(evt) {
+    evt.preventDefault();
+    this.setState({
+      errorMessage: 'Please enter a todo'
+    });
+  }
+
   render() {
+    const submitHandler = this.state.currentTodo ? this.handleSubmit : this.handleEmptySubmit;
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>React Todos</h2>
         </div>
+        {this.state.errorMessage}
         <TodoForm 
           onChangeInput={ this.onChangeInput.bind(this)} 
           currentTodo={ this.state.currentTodo }
-          handleSubmit={ this.handleSubmit.bind(this) } />
+          handleSubmit={ submitHandler } />
         <TodoList todos={ this.state.todos}/>
       </div>
     );
