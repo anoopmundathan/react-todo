@@ -8,6 +8,7 @@ import TodoList from './components/todo/TodoList';
 
 class App extends Component {
 
+  // ES6 Property initializer
   state = {
       todos: [
         { id: 1, name: 'Learn React', isComplete: false},
@@ -19,24 +20,14 @@ class App extends Component {
   }
 
   onChangeInput = evt => {
-    this.setState({
-      currentTodo: evt.target.value,
-      errorMessage: ''
-    })
+    this.setState({currentTodo: evt.target.value, errorMessage: ''});
   }
 
   handleSubmit = evt => {
     evt.preventDefault();
-
     const newId = generateId();
-    const newTodo = {
-      id: newId,
-      name: this.state.currentTodo,
-      isComplete: false
-    }
-
+    const newTodo = {id: newId,name: this.state.currentTodo,isComplete: false}
     const updatedTodo = addTodo(this.state.todos, newTodo);
-
     this.setState({
       todos: updatedTodo,
       currentTodo: ''
