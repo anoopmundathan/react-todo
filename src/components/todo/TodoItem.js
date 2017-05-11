@@ -9,7 +9,7 @@ const TodoItem = props => {
         <li>
             <input 
                 type="checkbox"
-                onChange={() => props.handleToggle(props.id)}
+                onChange={handleToggle}
                 checked={props.isComplete}/>
             { props.name }
         </li>
