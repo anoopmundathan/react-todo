@@ -7,14 +7,17 @@ const TodoList = props => {
     return(
         <div className="todo-list">
             <ul>
-                {props.todos.map(todo => <TodoItem {...todo} key={todo.id}/>)}
+                {props.todos.map(todo => <TodoItem 
+                    handleToggle={props.handleToggle} 
+                    {...todo} 
+                    key={todo.id}/>)}
             </ul>
         </div>
     );
 }
 
 TodoList.PropTypes = {
-    todos: PropTypes.array.isRequired
+    todos: PropTypes.array.isRequired,
 }
 
 export default TodoList;
