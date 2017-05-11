@@ -9,6 +9,7 @@ const TodoList = props => {
             <ul>
                 {props.todos.map(todo => <TodoItem 
                     handleToggle={props.handleToggle} 
+                    handleRemove={props.handleRemove}
                     {...todo} 
                     key={todo.id}/>)}
             </ul>
