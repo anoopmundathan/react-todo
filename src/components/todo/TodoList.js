@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import TodoItem from './TodoItem';
 
-const TodoList = props => {
+export const TodoList = props => {
     return(
         <div className="todo-list">
             <ul>
@@ -20,5 +20,3 @@ const TodoList = props => {
 TodoList.PropTypes = {
     todos: PropTypes.array.isRequired,
 }
-
-export default TodoList;

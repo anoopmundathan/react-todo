@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TodoForm = props => {
+export const TodoForm = props => {
     return (
         <div className="todo-app">
             <form onSubmit={props.handleSubmit}>
@@ -19,5 +19,3 @@ TodoForm.PropTypes = {
     currentTodo: PropTypes.string.isRequired,
     handleSubmit: PropTypes.func.isRequired
 }
-
-export default TodoForm;
