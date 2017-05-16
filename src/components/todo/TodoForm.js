@@ -5,10 +5,9 @@ export const TodoForm = props => {
     return (
         <div className="todo-app">
             <form onSubmit={props.handleSubmit}>
-                <input 
-                    type="text" 
-                    onChange={props.onChangeInput} 
-                    value={props.currentTodo} />
+                <input type="text" 
+                onChange={props.onChange} 
+                value={props.currentTodo} />
             </form>
         </div>
     )
