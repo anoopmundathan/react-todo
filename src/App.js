@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import { addTodo, generateId, findById, toggleTodo, updateTodo, removeTodo } from './lib/todoHelpers';
@@ -57,19 +56,20 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>React Todos</h2>
+          <h2>React Todo List</h2>
         </div>
-        {this.state.errorMessage}
-        <TodoForm 
-          onChange={this.onChangeInput} 
-          currentTodo={this.state.currentTodo }
-          handleSubmit={submitHandler }/>
-        <TodoList 
-          handleToggle={this.handleToggle}
-          handleRemove={this.handleRemove} 
-          todos={this.state.todos}/>
-        <Footer />
+        <div className="Todo">
+          {this.state.errorMessage}
+          <TodoForm 
+            onChange={this.onChangeInput} 
+            currentTodo={this.state.currentTodo }
+            handleSubmit={submitHandler }/>
+          <TodoList 
+            handleToggle={this.handleToggle}
+            handleRemove={this.handleRemove} 
+            todos={this.state.todos}/>
+          <Footer />
+        </div>
       </div>
     );
   }

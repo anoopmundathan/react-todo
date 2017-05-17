@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export const TodoForm = props => {
     return (
-        <div className="todo-app">
+        <div className="Todo-App">
             <form onSubmit={props.handleSubmit}>
                 <input type="text" 
                 onChange={props.onChange} 
