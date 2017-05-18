@@ -5,7 +5,7 @@ import './App.css';
 import { addTodo, generateId, findById, toggleTodo, updateTodo, removeTodo, filterTodos } from './lib/todoHelpers';
 import {pipe, partial} from './lib/util';
 import {TodoForm, TodoList, Footer} from './components/todo';
-import {fetchTodos} from './lib/todoService';
+import {fetchTodos, createTodo} from './lib/todoService';
 
 class App extends Component {
 
@@ -33,6 +33,8 @@ class App extends Component {
       todos: updatedTodo,
       currentTodo: ''
     });
+    createTodo(newTodo)
+      .then(todo => console.log(todo));
   }
 
   handleEmptySubmit = evt => {
