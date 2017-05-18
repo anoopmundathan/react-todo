@@ -13,7 +13,8 @@ class App extends Component {
   state = {
       todos: [],
       currentTodo: '',
-      errorMessage: ''
+      errorMessage: '',
+      message: ''
   }
 
   static contextTypes = {
@@ -34,8 +35,14 @@ class App extends Component {
       currentTodo: ''
     });
     createTodo(newTodo)
-      .then(todo => console.log(todo));
+      .then(this.showMessage('Todo added'));
   }
+
+  showMessage = msg => {
+    this.setState({message: msg});
+    setTimeout(() => this.setState({message: ''}), 2000); 
+  }
+  
 
   handleEmptySubmit = evt => {
     evt.preventDefault();
@@ -70,6 +77,7 @@ class App extends Component {
         </div>
         <div className="Todo">
           {this.state.errorMessage}
+          {this.state.message}
           <TodoForm 
             onChange={this.onChangeInput} 
             currentTodo={this.state.currentTodo }
