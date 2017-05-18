@@ -5,16 +5,13 @@ import './App.css';
 import { addTodo, generateId, findById, toggleTodo, updateTodo, removeTodo, filterTodos } from './lib/todoHelpers';
 import {pipe, partial} from './lib/util';
 import {TodoForm, TodoList, Footer} from './components/todo';
+import {fetchTodos} from './lib/todoService';
 
 class App extends Component {
 
   // ES6 Property initializer
   state = {
-      todos: [
-        { id: 1, name: 'Learn React', isComplete: false},
-        { id: 2, name: 'Learn Vue', isComplete: true},
-        { id: 3, name: 'Learn Redux', isComplete: false}
-      ],
+      todos: [],
       currentTodo: '',
       errorMessage: ''
   }
@@ -56,6 +53,11 @@ class App extends Component {
     this.setState({todos: todos});
   }
   
+  componentDidMount() {
+    fetchTodos()
+      .then(todos => this.setState({todos}));
+  }
+
   render() {
     const submitHandler = this.state.currentTodo ? this.handleSubmit : this.handleEmptySubmit;
     const displayTodos = filterTodos(this.state.todos, this.context.route);
