@@ -81,8 +81,10 @@ class App extends Component {
           <h2>React Todo List</h2>
         </div>
         <div className="Todo">
+          <div className="Todo-Message">
           {this.state.errorMessage}
           {this.state.message}
+          </div>
           <TodoForm 
             onChange={this.onChangeInput} 
             currentTodo={this.state.currentTodo }

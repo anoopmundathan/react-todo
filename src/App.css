@@ -12,6 +12,7 @@
 }
 
 .Todo-App,
+.Todo-Message,
 .Todo-List,
 .Todo-Footer {
   width: 20%;
@@ -49,4 +50,8 @@ a {
 
 .Todo-Footer a.active {
   font-weight: bold;
+}
+
+.Todo-Message {
+  color: green;
 }
