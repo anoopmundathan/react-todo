@@ -1,74 +1,14 @@
 {
   "todos": [
     {
-      "id": 1,
-      "name": "Learn React",
+      "id": 702,
+      "name": "PWA",
       "isComplete": false
     },
     {
-      "id": 2,
-      "name": "Learn Vue",
-      "isComplete": true
-    },
-    {
-      "id": 4,
-      "name": "Learn Angular",
+      "id": 454,
+      "name": "TensorFlow",
       "isComplete": false
-    },
-    {
-      "id": 5,
-      "name": "Learn PWA",
-      "isComplete": false
-    },
-    {
-      "id": 6,
-      "name": "Learn Firebase",
-      "isComplete": false
-    },
-    {
-      "id": 7,
-      "name": "Learn Redux",
-      "isComplete": false
-    },
-    {
-      "id": 8,
-      "name": "Learn ML",
-      "isComplete": false
-    },
-    {
-      "id": 9,
-      "name": "Learn VR",
-      "isComplete": false
-    },
-    {
-      "id": 10,
-      "name": "Learn Unity",
-      "isComplete": false
-    },
-    {
-      "id": 539,
-      "name": "Learn Backbone",
-      "isComplete": true
-    },
-    {
-      "id": 96,
-      "name": "hello",
-      "isComplete": true
-    },
-    {
-      "id": 692,
-      "name": "hhhh",
-      "isComplete": true
-    },
-    {
-      "id": 549,
-      "name": "gggg",
-      "isComplete": true
-    },
-    {
-      "id": 845,
-      "name": "ssdsd",
-      "isComplete": true
     }
   ]
 }

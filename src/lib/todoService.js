@@ -18,6 +18,7 @@ export const createTodo = todo => {
 }
 
 export const saveTodo = todo => {
+    
     return fetch(`${baseUrl}/${todo.id}`, {
         method: 'PUT',
         headers: {
@@ -27,4 +28,14 @@ export const saveTodo = todo => {
         body: JSON.stringify(todo)
     })
     .then(response => response.json());
+}
+
+export const deleteTodo = id => {
+    return fetch(`${baseUrl}/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    });
 }

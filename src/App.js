@@ -5,7 +5,7 @@ import './App.css';
 import { addTodo, generateId, findById, toggleTodo, updateTodo, removeTodo, filterTodos } from './lib/todoHelpers';
 import {pipe, partial} from './lib/util';
 import {TodoForm, TodoList, Footer} from './components/todo';
-import {fetchTodos, createTodo, saveTodo} from './lib/todoService';
+import {fetchTodos, createTodo, saveTodo, deleteTodo} from './lib/todoService';
 
 class App extends Component {
 
@@ -63,6 +63,8 @@ class App extends Component {
   handleRemove = (id, evt) => {
     const todos = removeTodo(this.state.todos, id);    
     this.setState({todos: todos});
+    deleteTodo(id)
+      .then(() => this.showMessage('Todo deleted'));
   }
   
   componentDidMount() {
