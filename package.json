@@ -10,6 +10,9 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
+  "engines": {
+    "node": "v7.0.0"
+  },
   "devDependencies": {
     "json-server": "0.10.1",
     "react-scripts": "0.9.5"
