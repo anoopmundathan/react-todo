@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3000/todos';
+const baseUrl = '/todos';
 
 export const fetchTodos = () => {
     return fetch(baseUrl)
